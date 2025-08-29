@@ -1,0 +1,36 @@
+.ben-card {
+  background-color: #8adb34;
+}
+
+.my-btn1 {
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: #40d40e;
+}
+
+.may-alert {
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.my-btn1 {
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: #d96161;
+}
+
+body {
+  color: #8adb34;
+}/*# sourceMappingURL=main.css.map */

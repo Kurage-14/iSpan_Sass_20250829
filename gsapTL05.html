@@ -52,9 +52,15 @@
         tl.to(".box2", { x: posotion, duration: 2 }, "a1");
         tl.to(".box3", { x: posotion, duration: 1 }, "a1-=1");
 
-        buttons[0].addEventListener("click", () => { });
-        buttons[1].addEventListener("click", () => { });
-        buttons[2].addEventListener("click", () => { });
+        buttons[0].addEventListener("click", () => {
+            tl.play();
+        });
+        buttons[1].addEventListener("click", () => {
+            tl.pause();
+        });
+        buttons[2].addEventListener("click", () => {
+            tl.reverse();
+        });
     </script>
 </body>
 
