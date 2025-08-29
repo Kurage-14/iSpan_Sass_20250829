@@ -34,9 +34,9 @@
 
         document.addEventListener("click", (e) => {
             // 在記憶體中建立 div, 加到 body 裡
-            const box = document.createElement("div");
-            box.classList.add("box");
-            document.body.append(box);
+            const box = document.createElement("div"); // 在記憶體中建立一個 <div>
+            box.classList.add("box"); // 把 <div> 變成 <div class="box">
+            document.body.append(box); // 加到 body 的最後
 
             // 20250829
             // 因為 gsap 不是使用 left/top 做為移動的依據
