@@ -17,7 +17,7 @@
             font-weight: bold;
         }
     </style>
-    <title>文字動畫01</title>
+    <title>文字動畫01_2</title>
 </head>
 
 <body>
@@ -26,6 +26,12 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script>
+        const title = document.querySelector(".title");
+        console.log(title.innerHTML); // 裡面的 HTML 內容
+        console.log(title.innerText); // 裡面的渲染之後的文字結果
+        console.log(title.textContent); // 原始的文字
+
+
         requestIdleCallback(() => {
             gsap.from(".title", {
                 scale: 2,
