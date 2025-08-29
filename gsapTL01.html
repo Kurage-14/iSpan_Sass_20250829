@@ -38,7 +38,11 @@
     <script>
         const box = document.querySelector(".box");
         console.log(box.getBoundingClientRect()); // 包位元素的矩形範圍資訊
-
+        const posotion = window.innerWidth - box.getBoundingClientRect().width - 16;
+        const tl = gsap.timeline();
+        tl.to(".box1", { x: posotion, duration: 1 });
+        tl.to(".box2", { x: posotion, duration: 5 });
+        tl.to(".box3", { x: posotion, duration: 1 });
     </script>
 </body>
 
