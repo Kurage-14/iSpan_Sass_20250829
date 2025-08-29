@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: bold;
+
+            span {
+                display: inline-block;
+            }
+        }
+    </style>
+    <title>文字動畫01_2</title>
+</head>
+
+<body>
+    <div class="title">
+        白日依山盡黃河入海流
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script>
+        const title = document.querySelector(".title");
+        console.log(title.innerHTML); // 裡面的 HTML 內容
+        console.log(title.innerText); // 裡面的渲染之後的文字結果
+        console.log(title.textContent); // 原始的文字
+
+        const text = title.textContent.trim(); // 去空白
+        title.innerHTML = ""; // 清空
+        for (let i = 0; i < text.length; i++) { // 迴圈取出一個一個的字
+            const span = document.createElement("span"); // 建立 span
+            span.textContent = text[i]; // 文字放入span
+            console.log(span);
+            title.append(span) // 往容器的最後塞
+        }
+
+
+        // stagger
+        requestIdleCallback(() => {
+            gsap.from(".title span", {
+                scale: 3,
+                opacity: 0,
+                duration: 2,
+                ease: "bounce.inOut",
+                stagger: {
+                    each: 0.5,
+                    grid: "auto",
+                    from: "random"
+                } // 錯開, 物件式設定, 可以設定錯開的方式
+            });
+        });
+
+    </script>
+</body>
+
+</html>
