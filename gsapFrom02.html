@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .box {
+            /* 初始位置在畫面中央 */
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            width: 100px;
+            height: 100px;
+            background-color: #08a7eb;
+            border-radius: 50%;
+        }
+    </style>
+    <title>gsap.to()</title>
+</head>
+
+<body>
+    <!-- <div class="box"></div> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script>
+        // gsap.from(".box", {
+        //     x: -500,
+        //     duration: 1
+        // });
+
+        document.addEventListener("click", (e) => {
+            // 在記憶體中建立 div, 加到 body 裡
+            const box = document.createElement("div");
+            box.classList.add("box");
+            document.body.append(box);
+
+            // 20250829
+            // 因為 gsap 不是使用 left/top 做為移動的依據
+            // 而是使用 transform translate
+            // 因此點擊畫面取得的座標不能直接用
+            // 要和中心點算出距離差, 使用距離差在 from 的座標中
+
+            gsap.from(box, {
+                x: e.pageX,
+                y: e.pageY,
+                duration: 1
+            });
+        });
+    </script>
+</body>
+
+</html>
