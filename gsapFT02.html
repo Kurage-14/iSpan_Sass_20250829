@@ -86,8 +86,14 @@
     <div class="dot" data-hover="aaaa"></div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script>
+        let ary = [];
+
         window.addEventListener("click", (e) => {
-            setDot(e);
+            if (ary.length < 2) { // 記錄用的陣列, 只有在長度小於2的情況下, 才能記錄
+                ary.push([e.pageX, e.pageY]);
+                console.log(ary);
+                setDot(e);
+            }
         });
 
         function setDot(e) {
