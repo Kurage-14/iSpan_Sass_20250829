@@ -17,6 +17,7 @@
             height: 100px;
             background-color: #08a7eb;
             border-radius: 50%;
+            opacity: 0;
         }
     </style>
     <title>gsap.to()</title>
@@ -51,6 +52,7 @@
             gsap.from(box, {
                 x: e.pageX - centerX,
                 y: e.pageY - centerY,
+                opacity: 1,
                 duration: 1
             });
             // 要和中心點算出距離差
