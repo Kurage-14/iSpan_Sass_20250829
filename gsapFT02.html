@@ -33,10 +33,35 @@
             transform-origin: center center;
             transform: translate(-50%, -50%);
             border-radius: 50%;
+            animation-name: ani01;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+            animation-delay: 1s;
+            z-index: 1;
         }
 
         .dot::after {
             content: "";
+        }
+
+        @keyframes ani01 {
+            0% {
+                width: 0px;
+                height: 0px;
+                opacity: 1;
+            }
+
+            90% {
+                width: 30px;
+                height: 30px;
+                opacity: 0.8;
+            }
+
+            100% {
+                width: 40px;
+                height: 40px;
+                opacity: 0;
+            }
         }
     </style>
     <title>gsap.fromTo() 2</title>
