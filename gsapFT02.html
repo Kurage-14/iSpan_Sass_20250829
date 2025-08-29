@@ -93,15 +93,22 @@
                 ary.push([e.pageX, e.pageY]); // 記錄
                 setDot(e); // 畫紅點
                 if (ary.length == 2) { // 如果記錄長度剛好是2
-                    gsap.fromTo(".box", { // 要跑動畫
-                        x: ary[0][0], // 第一個點的X
-                        y: ary[0][1] // 第一個點的Y
-                    }, {
-                        x: ary[1][0],
-                        y: ary[1][1],
-                        duration: 1
-                    });
-                    ary = []; // 清空記錄
+                    setTimeout(() => {
+                        gsap.fromTo(".box", { // 要跑動畫
+                            x: ary[0][0] - 50, // 第一個點的X
+                            y: ary[0][1] - 50 // 第一個點的Y
+                        }, {
+                            x: ary[1][0] - 50,
+                            y: ary[1][1] - 50,
+                            duration: 1,
+                            onComplete: () => { // 當動畫播完時
+                                ary = []; // 清空記錄
+                            },
+                            delay: 1
+                        });
+                    }, 1000); // 一次性的記時器, 在一秒後, 才把box放到初始位置
+
+
                 }
             }
         });
