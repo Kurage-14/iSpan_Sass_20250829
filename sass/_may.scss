@@ -1,8 +1,11 @@
+@use "placeholder";
+
 .may-alert {
     padding: 10px;
     margin-bottom: 20px;
 }
 
 .my-btn1 {
+    @extend %btn1;
     background-color: #d96161;
 }
