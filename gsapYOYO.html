@@ -33,7 +33,10 @@
     <script>
         document.querySelector("button").addEventListener("click", () => {
             gsap.to(".ball", {
-                y:
+                y: -100,
+                duration: 0.5,
+                repeat: -1,
+                yoyo: true
             });
         })
     </script>
