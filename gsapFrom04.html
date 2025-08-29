@@ -32,9 +32,12 @@
         console.log(title.textContent); // 原始的文字
 
         const text = title.textContent.trim(); // 去空白
-
+        title.innerHTML = ""; // 清空
         for (let i = 0; i < text.length; i++) { // 迴圈取出一個一個的字
-            console.log(text[i]);
+            const span = document.createElement("span"); // 建立 span
+            span.textContent = text[i]; // 文字放入span
+            console.log(span);
+            title.append(span) // 往容器的最後塞
         }
 
 
