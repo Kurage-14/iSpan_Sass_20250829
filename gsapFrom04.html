@@ -15,6 +15,10 @@
         .title {
             font-size: 50px;
             font-weight: bold;
+
+            span {
+                display: inline-block;
+            }
         }
     </style>
     <title>文字動畫01_2</title>
@@ -44,9 +48,10 @@
         // stagger
         requestIdleCallback(() => {
             gsap.from(".title span", {
-                scale: 2,
+                scale: 3,
                 opacity: 0,
-                duration: 1,
+                duration: 2,
+                ease: "bounce.inOut",
                 stagger: 0.5 // 錯開
             });
         });
