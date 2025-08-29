@@ -83,16 +83,26 @@
 
 <body>
     <div class="box"></div>
-    <div class="dot" data-hover="aaaa"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script>
         let ary = [];
 
         window.addEventListener("click", (e) => {
             if (ary.length < 2) { // 記錄用的陣列, 只有在長度小於2的情況下, 才能記錄
-                ary.push([e.pageX, e.pageY]);
-                console.log(ary);
-                setDot(e);
+                ary.push([e.pageX, e.pageY]); // 記錄
+                setDot(e); // 畫紅點
+                if (ary.length == 2) { // 如果記錄長度剛好是2
+                    gsap.fromTo(".box", { // 要跑動畫
+                        x: ary[0][0], // 第一個點的X
+                        y: ary[0][1] // 第一個點的Y
+                    }, {
+                        x: ary[1][0],
+                        y: ary[1][1],
+                        duration: 1
+                    });
+                    ary = []; // 清空記錄
+                }
             }
         });
 
