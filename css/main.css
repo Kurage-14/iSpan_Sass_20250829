@@ -1,7 +1,3 @@
-.ben-card {
-  background-color: #8adb34;
-}
-
 .my-btn1 {
   padding: 20px;
   padding-top: 10px;
@@ -11,6 +7,13 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+}
+
+.ben-card {
+  background-color: #8adb34;
+}
+
+.my-btn1 {
   background-color: #40d40e;
 }
 
@@ -20,14 +23,6 @@
 }
 
 .my-btn1 {
-  padding: 20px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   background-color: #d96161;
 }
 
