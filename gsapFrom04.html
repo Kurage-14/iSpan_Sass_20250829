@@ -41,12 +41,13 @@
         }
 
 
-
+        // stagger
         requestIdleCallback(() => {
-            gsap.from(".title", {
+            gsap.from(".title span", {
                 scale: 2,
                 opacity: 0,
                 duration: 1,
+                stagger: 0.5 // 錯開
             });
         });
 
