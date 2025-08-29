@@ -29,15 +29,14 @@
             display: inline-block;
             width: 40px;
             height: 40px;
-            outline: 2px solid blue;
+            outline: 5px solid blue;
             transform-origin: center center;
             transform: translate(-50%, -50%);
             border-radius: 50%;
             animation-name: ani01;
-            animation-iteration-count: infinite;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
             animation-fill-mode: forwards;
-            animation-delay: 1s;
-            z-index: 1;
         }
 
         .dot::after {
@@ -51,7 +50,7 @@
                 opacity: 1;
             }
 
-            90% {
+            60% {
                 width: 30px;
                 height: 30px;
                 opacity: 0.8;
