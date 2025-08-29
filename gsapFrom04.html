@@ -32,7 +32,10 @@
         console.log(title.textContent); // 原始的文字
 
         const text = title.textContent.trim(); // 去空白
-        console.log(text[0]);
+
+        for (let i = 0; i < text.length; i++) { // 迴圈取出一個一個的字
+            console.log(text[i]);
+        }
 
 
 
