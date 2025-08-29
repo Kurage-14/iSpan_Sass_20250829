@@ -32,6 +32,10 @@
         //     duration: 1
         // });
 
+        // 計算中心點一次
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+
         document.addEventListener("click", (e) => {
             // 在記憶體中建立 div, 加到 body 裡
             const box = document.createElement("div"); // 在記憶體中建立一個 <div>
@@ -45,10 +49,11 @@
             // 要和中心點算出距離差, 使用距離差在 from 的座標中
 
             gsap.from(box, {
-                x: e.pageX,
-                y: e.pageY,
+                x: e.pageX - centerX,
+                y: e.pageY - centerY,
                 duration: 1
             });
+            // 要和中心點算出距離差
         });
     </script>
 </body>
