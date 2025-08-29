@@ -86,7 +86,14 @@
     <div class="dot" data-hover="aaaa"></div>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script>
+        window.addEventListener("click", (e) => {
+            setDot(e);
+        });
 
+        function setDot(e) {
+            console.log(e);
+
+        }
     </script>
 </body>
 
