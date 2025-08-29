@@ -17,6 +17,18 @@
   background-color: #40d40e;
 }
 
+.card {
+  padding: 10px;
+}
+.card .title {
+  font-size: 16px;
+}
+@media (width > 260px) {
+  .card {
+    padding: 100px;
+  }
+}
+
 .may-alert {
   padding: 10px;
   margin-bottom: 20px;
