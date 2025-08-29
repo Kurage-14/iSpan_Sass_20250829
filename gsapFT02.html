@@ -91,11 +91,16 @@
         });
 
         function setDot(e) {
-            console.log(e);
             const dot = document.createElement("div");
             dot.classList.add("dot");
             dot.style.left = `${e.pageX - 15}px`;
             dot.style.top = `${e.pageY - 15}px`;
+            dot.addEventListener("animationend", (e) => { // 動畫播完時
+                if (e.pseudoElement == "::after") { // 從事件參數取得在哪個偽元素觸發
+                    e.target.remove(); // 移除事件觸發的元素
+                };
+
+            });
             document.body.append(dot);
         }
     </script>
