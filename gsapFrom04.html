@@ -31,6 +31,10 @@
         console.log(title.innerText); // 裡面的渲染之後的文字結果
         console.log(title.textContent); // 原始的文字
 
+        const text = title.textContent.trim(); // 去空白
+        console.log(text[0]);
+
+
 
         requestIdleCallback(() => {
             gsap.from(".title", {
