@@ -53,9 +53,14 @@
                 x: e.pageX - centerX,
                 y: e.pageY - centerY,
                 opacity: 1,
-                duration: 1
+                duration: 1,
+                onComplete: () => {
+                    box.remove()
+                }
             });
             // 要和中心點算出距離差
+            // 加上透明的漸變, 由完全不透明到中心完全透明
+            // 動畫的完成事件, 移除元素
         });
     </script>
 </body>
